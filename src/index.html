@@ -1,0 +1,134 @@
+<html>
+ <head>
+ <link href="css/bootstrap.min.css" rel="stylesheet">
+<style type="text/css">
+
+th, td {
+  padding: 10px;
+}
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.button {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 40px 2px;
+  cursor: pointer;
+  width: 100px;
+}
+</style>
+
+<script type="text/javascript">
+
+   function validation(){
+      
+      var user = document.getElementById("username").value; 
+      
+
+ //document.getElementById("list").appendChild(lis);
+  //document.getElementById("username").value = ""; // clear the value
+var l=document.getElementById("list").getElementsByTagName("li").length
+var items=document.getElementById("list").getElementsByTagName("li");
+  //window.alert(l);
+      for (var i = 1; i < l; ++i) {
+      
+              window.alert(items[i].innerHTML);
+            if ( items[i].innerHTML==user){
+              window.alert("User already exists");
+               return false;
+            }
+        
+    }
+
+var lis = "<li>" + user + "</li>";
+  document.getElementById("list").insertAdjacentHTML('beforeend', lis);
+ return true;
+
+    
+  }
+
+</script>
+<title>Bidding Form</title>
+ </head>
+  <body>
+   <title></title>
+
+ <div align="center" style="margin-top: 10%;">
+ 	
+		<h1 style="color:black;"> Online Bidding System</h1>
+		<h3 style="color:black;"> Please enter Name and Amount for Bidding</h3>
+	</div>
+	<div align="center">
+		<img src="image/img1.png" alt="Twinkle Winter Bark Tree" width="300" height="300"/>
+
+		<form id="frm" onSubmit="App.bidAmount(); return false;">
+			<table style="with: 50%">
+
+				<tbody>
+					<tr>
+					<td style="color:black;">Name</td>
+					<td><input type="text" name="username" id="username"></td>
+				</tr>
+				<tr>
+					<td style="color:black;"> Amount</td>
+					<td><input type="text" name="amount" id="amount"></td>
+				</tr>
+        <tr>
+<td>
+</td>
+        </tr>
+				<tr>
+					<td> 
+					<input type="submit" value="Submit" id ="add" class="button" >
+					</td>
+					
+					</tr>	
+
+
+
+          
+			</tbody></table>
+		</form>
+	</div>	
+	
+	<center><div id = "errordiv" style="display:none;"></div></center>
+	    <center><p id="msg" style="display:none;"><font color="green"> Your Bid has been entered successfully</font></p></center>
+    <center><p id="results" style="display:none;">
+    <button class= "button1" id="button1"><center><font size="7">Results</font></center></button></div>
+        
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+
+  	jQuery(function ($){
+    $('#button1').click(function() {
+
+        $("#frm").hide();
+         $("#msg").hide();
+         $("#resultdiv").show();
+         
+    });
+});
+  </script>
+<center><div id = "resultdiv" style="display:none;align:bottom"><font color="green"></font></div><center>
+</center>
+</p>
+
+
+   <script src="app.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>   
+   <script src="vendor/truffle-contract/dist/truffle-contract.js"></script>
+  </body>
+</html>
